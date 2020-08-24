@@ -107,7 +107,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             view.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .top,
                                                   relatedBy: .equal,
-                                                  toItem: plugin.viewController.topLayoutGuide,
+                                                  toItem: plugin.viewController.view.safeAreaLayoutGuide.topAnchor,
                                                   attribute: .top,
                                                   multiplier: 1,
                                                   constant: 0))
@@ -115,7 +115,7 @@ class AMSBanner: AMSAdBase, GADBannerViewDelegate {
             view.addConstraint(NSLayoutConstraint(item: bannerView,
                                                   attribute: .bottom,
                                                   relatedBy: .equal,
-                                                  toItem: plugin.viewController.bottomLayoutGuide,
+                                                  toItem: plugin.viewController.view.safeAreaLayoutGuide.bottomAnchor,
                                                   attribute: .top,
                                                   multiplier: 1,
                                                   constant: 0))
