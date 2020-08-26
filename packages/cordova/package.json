@@ -1,7 +1,7 @@
 {
-  "name": "cordova-admob-plus",
-  "version": "0.36.0",
-  "description": "Trustable Google AdMob Cordova Plugin",
+  "name": "cordova-plugin-google-admob",
+  "version": "0.37.0",
+  "description": "Cordova plugin for Google AdMob.",
   "main": "www/admob.js",
   "typings": "www/admob.d.ts",
   "scripts": {
@@ -29,10 +29,12 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-node": "^8.6.2"
   },
-  "author": "Ratson",
+  "author": "Joshua McFarland",
   "license": "MIT",
-  "repository": "admob-plus/admob-plus",
-  "homepage": "https://admob-plus.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcfarljw/cordova-plugin-google-admob"
+  },
   "files": [
     "*.ts",
     "*.md",
@@ -48,6 +50,7 @@
     "plus",
     "ecosystem:cordova",
     "cordova-plugin-admob",
+    "cordova-plugin-google-admob",
     "cordova-admob",
     "cordova-android",
     "cordova-ios",
@@ -57,7 +60,7 @@
     "admobpro"
   ],
   "cordova": {
-    "id": "cordova-admob-plus",
+    "id": "cordova-plugin-google-admob",
     "platforms": [
       "android",
       "ios"

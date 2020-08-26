@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-admob-plus" version="0.0.0"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>@admob-plus/cordova</name>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-google-admob" 
+        version="0.37.0" >
+    <name>Google AdMob</name>
     <js-module name="AdMob" src="www/admob.js">
-        <clobbers target="admob" />
+        <clobbers target="plugins.admob" />
     </js-module>
 
     <engines>
@@ -15,8 +16,15 @@
 
     <platform name="android">
         <preference name="APP_ID_ANDROID" default="test" />
-        <preference name="GradlePluginGoogleServicesEnabled" value="true" />
-        <preference name="GradlePluginGoogleServicesVersion" value="4.3.3" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AdMob">
+                <param name="android-package" value="admob.plugin.AdMob"/>
+            </feature>
+
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.3" />
+        </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data
@@ -25,12 +33,6 @@
             <meta-data
                 android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
                 android:value="true"/>
-        </config-file>
-
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AdMob">
-                <param name="android-package" value="admob.plugin.AdMob"/>
-            </feature>
         </config-file>
 
         <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
