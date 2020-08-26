@@ -1,5 +1,5 @@
 {
-  "name": "admob-plus-monorepo",
+  "name": "cordova-plugin-google-admob",
   "private": true,
   "scripts": {
     "test": "run-s test:*",
@@ -67,7 +67,6 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -78,8 +77,7 @@
     ],
     "*.md": "remark --no-stdout",
     "*.ts": "prettier-tslint fix",
-    "examples/*/package.json": "prettier --write",
-    "packages/cordova/src/ios/*.swift": "swiftlint lint --strict --path"
+    "examples/*/package.json": "prettier --write"
   },
   "remarkConfig": {
     "plugins": [
